@@ -27,6 +27,9 @@ public class ActivityController {
         model.addAttribute("list",list);
         return "activity";
     }
+    /**开发人员写了一句话
+     *
+    */
     /** 2 删除活动信息 根据id*/
     @RequestMapping("deleteById")
     @ResponseBody
