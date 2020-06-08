@@ -16,5 +16,5 @@ public interface ActivityService {
     /** 4 根据id 查找活动信息*/
     Activity findById(Integer id);
 
-    int saveActivity(Activity activity);
+    Activity saveActivity(Activity activity);
 }

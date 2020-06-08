@@ -20,7 +20,7 @@ public interface ActivityDao {
     @Select("select id,title,category,startTime,endTime,remark,state,createdTime,createdUser from tb_activity where id=#{id}")
     Activity findById(Integer id);
 
-    @Insert("insert into tb_activity value(null,#{title},#{category},#{startTime},#{endTime},#{remark},#{state},now(),#{createdUser})")
+//    @Insert("insert into tb_activity value(null,#{title},#{category},#{startTime},#{endTime},#{remark},#{state},#(createdTime),#{createdUser})")
     int addActivity(Activity entity);
 
     int updateActivity(Activity activity);

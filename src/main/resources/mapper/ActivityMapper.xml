@@ -3,6 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cy.cgbactivity01.activity.dao.ActivityDao">
+    <insert id="addActivity"
+            parameterType="com.cy.cgbactivity01.activity.pojo.Activity"
+            useGeneratedKeys="true"
+            keyProperty="id">
+    insert into tb_activity
+    (title,category,startTime,endTime,state,remark,createdTime,createdUser)
+    values(#{title},#{category},#{startTime},#{endTime},#{state},#{remark},#{createdTime},#{createdUser})
+   </insert>
 
     <update id="updateActivity">
       update tb_activity

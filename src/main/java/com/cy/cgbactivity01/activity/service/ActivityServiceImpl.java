@@ -5,6 +5,7 @@ import com.cy.cgbactivity01.activity.pojo.Activity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,13 +37,15 @@ public class ActivityServiceImpl implements ActivityService {
 
     /** 6 */
     @Override
-    public int saveActivity(Activity entity) {
+    public Activity saveActivity(Activity entity) {
 //        return activityDao.insertActivity(entity);
         if(entity.getId()==null) {
-            return activityDao.addActivity(entity);
+            entity.setCreatedTime(new Date());
+             activityDao.addActivity(entity);
         }else {
-            return activityDao.updateActivity(entity);
+             activityDao.updateActivity(entity);
         }
+        return entity;
     }
 
 }

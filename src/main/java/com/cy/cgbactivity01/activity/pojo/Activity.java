@@ -24,6 +24,7 @@ public class Activity {
     private Date endTime;
     private String remark;
     private Integer state = 1;
+    @JsonFormat(pattern = "yyyy/MM/dd HH:mm")
     private Date createdTime;
     private String createdUser;
 }

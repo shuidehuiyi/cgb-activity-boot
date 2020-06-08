@@ -40,9 +40,11 @@ public class ActivityController {
 
 
     @RequestMapping("doSaveActivity")
-    public String addActivity(Activity activity){
-        activityService.saveActivity(activity);
-        return "forward:findAll";
+    @ResponseBody
+    public Activity addActivity(Activity activity){
+        Activity result = activityService.saveActivity(activity);
+//        return "forward:findAll";
+        return result;
     }
     /** 4 根据id 查找活动信息*/
     @RequestMapping("findById")
@@ -52,10 +54,5 @@ public class ActivityController {
         return "forward:findAll";
     }
 
-    /** test*/
-    @RequestMapping("testhotbushu")
-    public String testhot(){
-        return "activity";
-    }
 
 }
